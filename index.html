@@ -11,81 +11,61 @@
         .logo { font-size: 24px; font-weight: bold; letter-spacing: 2px; }
         nav a { margin-left: 20px; text-decoration: none; color: #666; font-weight: 500; transition: color 0.3s; }
         nav a:hover { color: #000; }
+        
         .hero { height: 60vh; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('Bild Titel.jpg') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; }
         .hero-content h1 { font-size: 48px; margin-bottom: 10px; letter-spacing: 1px; }
         .hero-content p { font-size: 20px; font-weight: 300; }
-        .section-container { max-width: 1200px; margin: 80px auto; padding: 0 20px; }
+        
+        .section-container { max-width: 1400px; margin: 80px auto; padding: 0 20px; }
         h2 { text-align: center; font-size: 32px; margin-bottom: 15px; letter-spacing: 1px; }
         .section-subtitle { text-align: center; color: #666; font-size: 16px; margin-bottom: 40px; font-style: italic; }
         
-        /* Spalten-Layout für den Shop (Masonry-ähnlicher Fluss) */
-        .gallery-grid { 
+        /* Masonry Layout für Portfolio & Shop */
+        .masonry-grid { 
             column-count: 3; 
             column-gap: 20px; 
             width: 100%;
         }
-        
-        /* Portfolio-Stile (bleibt kompakt) */
-        #portfolio .gallery-grid {
-            column-count: 3;
-        }
-        .portfolio-item { 
+
+        .portfolio-item, .shop-item { 
             display: inline-block; 
             width: 100%; 
             margin-bottom: 20px; 
             background: #fff; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02); 
-            overflow: hidden; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.03); 
+            break-inside: avoid; 
+            transition: transform 0.3s;
         }
-        .portfolio-item img { 
-            width: 100%; 
-            height: auto; 
+
+        .portfolio-item:hover, .shop-item:hover { transform: translateY(-5px); }
+
+        /* Absolute Original-Proportionen erzwingen */
+        .masonry-grid img { 
+            width: 100% !important; 
+            height: auto !important; 
             display: block; 
-            transition: transform 0.5s; 
+            object-fit: contain !important;
         }
-        .portfolio-item:hover img { transform: scale(1.03); }
-        
-        /* Shop-Stile OPTIMIERT FÜR ORIGINALE BILDGRÖSSEN */
-        .shop-item { 
-            display: inline-block; 
-            width: 100%; 
-            margin-bottom: 25px; 
-            background: #fff; 
-            border: 1px solid #eee; 
-            padding-bottom: 20px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02); 
-            transition: transform 0.3s; 
-            break-inside: avoid; /* Verhindert, dass ein Produkt mitten im Bild auf die nächste Spalte umbricht */
-        }
-        .shop-item:hover { transform: translateY(-5px); }
-        
-        /* Die wichtigste Änderung: Breite 100%, Höhe passt sich automatisch an das Original an */
-        .shop-item img { 
-            width: 100%; 
-            height: auto; 
-            display: block; 
-        }
-        
-        .item-info { padding: 15px 15px 0 15px; }
-        .item-title { font-size: 18px; font-weight: bold; margin-bottom: 5px; }
-        .item-price { color: #222; font-size: 16px; font-weight: 500; margin-bottom: 15px; }
-        .buy-btn { display: block; text-align: center; background-color: #000; color: #fff; text-decoration: none; padding: 10px; font-size: 14px; font-weight: 500; letter-spacing: 1px; transition: background 0.3s; margin: 0 15px; }
+
+        /* Shop Info Stile */
+        .item-info { padding: 15px; border-top: 1px solid #f9f9f9; }
+        .item-title { font-size: 16px; font-weight: bold; margin-bottom: 5px; }
+        .item-price { color: #222; font-size: 14px; margin-bottom: 15px; }
+        .buy-btn { display: block; text-align: center; background-color: #000; color: #fff; text-decoration: none; padding: 10px; font-size: 13px; font-weight: 500; letter-spacing: 1px; transition: background 0.3s; }
         .buy-btn:hover { background-color: #333; }
         
-        /* Formular-Stile */
-        .booking-box { max-width: 600px; margin: 0 auto; background: #fff; padding: 40px; border: 1px solid #eee; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+        /* Formular */
+        .booking-box { max-width: 600px; margin: 0 auto; background: #fff; padding: 40px; border: 1px solid #eee; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 14px; }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; background: #fff; font-family: inherit; font-size: 16px; }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #000; outline: none; }
-        .submit-btn { width: 100%; padding: 14px; background: #000; color: #fff; border: none; font-size: 16px; font-weight: bold; letter-spacing: 1px; cursor: pointer; transition: background 0.3s; }
-        .submit-btn:hover { background: #333; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; font-family: inherit; }
+        .submit-btn { width: 100%; padding: 14px; background: #000; color: #fff; border: none; font-size: 16px; font-weight: bold; cursor: pointer; }
         
         footer { text-align: center; padding: 40px; background: #fff; border-top: 1px solid #eee; font-size: 14px; color: #999; margin-top: 100px; }
         
-        /* Responsive Anpassung für Tablets und Handys */
-        @media (max-width: 900px) { .gallery-grid, #portfolio .gallery-grid { column-count: 2; } }
-        @media (max-width: 600px) { .gallery-grid, #portfolio .gallery-grid { column-count: 1; } }
+        /* Responsive */
+        @media (max-width: 1000px) { .masonry-grid { column-count: 2; } }
+        @media (max-width: 600px) { .masonry-grid { column-count: 1; } }
     </style>
 </head>
 <body>
@@ -95,7 +75,7 @@
         <nav>
             <a href="#">Home</a>
             <a href="#portfolio">Portfolio</a>
-            <a href="#shop">Datei-Shop</a>
+            <a href="#shop">Shop</a>
             <a href="#contact">Kontakt</a>
         </nav>
     </header>
@@ -108,100 +88,136 @@
     </section>
 
     <section class="section-container" id="portfolio">
-        <h2>Mein Portfolio</h2>
-        <div class="section-subtitle">Ein Einblick in meine besten Arbeiten und Projekte</div>
-        <div class="gallery-grid">
-            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?q=80&w=600" alt="Werk 1"></div>
-            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1500622557534-20d135449857?q=80&w=600" alt="Werk 2"></div>
-            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=600" alt="Werk 3"></div>
+        <h2>Portfolio</h2>
+        <div class="section-subtitle">Meine Leidenschaft in Bildern</div>
+        <div class="masonry-grid">
+            <div class="portfolio-item"><img src="Portfolio (1).JPG" alt="Portfolio 1"></div>
+            <div class="portfolio-item"><img src="Portfolio (2).JPG" alt="Portfolio 2"></div>
+            <div class="portfolio-item"><img src="Portfolio (3).JPG" alt="Portfolio 3"></div>
+            <div class="portfolio-item"><img src="Portfolio (4).JPG" alt="Portfolio 4"></div>
+            <div class="portfolio-item"><img src="Portfolio (5).JPG" alt="Portfolio 5"></div>
+            <div class="portfolio-item"><img src="Portfolio (6).JPG" alt="Portfolio 6"></div>
+            <div class="portfolio-item"><img src="Portfolio (7).JPG" alt="Portfolio 7"></div>
+            <div class="portfolio-item"><img src="Portfolio (8).JPG" alt="Portfolio 8"></div>
+            <div class="portfolio-item"><img src="Portfolio (9).JPG" alt="Portfolio 9"></div>
+            <div class="portfolio-item"><img src="Portfolio (10).JPG" alt="Portfolio 10"></div>
+            <div class="portfolio-item"><img src="Portfolio (11).JPG" alt="Portfolio 11"></div>
+            <div class="portfolio-item"><img src="Portfolio (12).JPG" alt="Portfolio 12"></div>
+            <div class="portfolio-item"><img src="Portfolio (13).JPG" alt="Portfolio 13"></div>
+            <div class="portfolio-item"><img src="Portfolio (14).JPG" alt="Portfolio 14"></div>
+            <div class="portfolio-item"><img src="Portfolio (15).JPG" alt="Portfolio 15"></div>
+            <div class="portfolio-item"><img src="Portfolio (16).JPG" alt="Portfolio 16"></div>
+            <div class="portfolio-item"><img src="Portfolio (17).JPG" alt="Portfolio 17"></div>
+            <div class="portfolio-item"><img src="Portfolio (18).JPG" alt="Portfolio 18"></div>
+            <div class="portfolio-item"><img src="Portfolio (19).JPG" alt="Portfolio 19"></div>
+            <div class="portfolio-item"><img src="Portfolio (20).JPG" alt="Portfolio 20"></div>
+            <div class="portfolio-item"><img src="Portfolio (21).JPG" alt="Portfolio 21"></div>
+            <div class="portfolio-item"><img src="Portfolio (22).JPG" alt="Portfolio 22"></div>
+            <div class="portfolio-item"><img src="Portfolio (23).JPG" alt="Portfolio 23"></div>
+            <div class="portfolio-item"><img src="Portfolio (24).JPG" alt="Portfolio 24"></div>
+            <div class="portfolio-item"><img src="Portfolio (25).JPG" alt="Portfolio 25"></div>
+            <div class="portfolio-item"><img src="Portfolio (26).JPG" alt="Portfolio 26"></div>
+            <div class="portfolio-item"><img src="Portfolio (27).JPG" alt="Portfolio 27"></div>
+            <div class="portfolio-item"><img src="Portfolio (28).JPG" alt="Portfolio 28"></div>
+            <div class="portfolio-item"><img src="Portfolio (29).JPG" alt="Portfolio 29"></div>
+            <div class="portfolio-item"><img src="Portfolio (30).JPG" alt="Portfolio 30"></div>
+            <div class="portfolio-item"><img src="Portfolio (31).JPG" alt="Portfolio 31"></div>
+            <div class="portfolio-item"><img src="Portfolio (32).JPG" alt="Portfolio 32"></div>
+            <div class="portfolio-item"><img src="Portfolio (33).JPG" alt="Portfolio 33"></div>
+            <div class="portfolio-item"><img src="Portfolio (34).JPG" alt="Portfolio 34"></div>
+            <div class="portfolio-item"><img src="Portfolio (35).JPG" alt="Portfolio 35"></div>
+            <div class="portfolio-item"><img src="Portfolio (36).JPG" alt="Portfolio 36"></div>
+            <div class="portfolio-item"><img src="Portfolio (37).JPG" alt="Portfolio 37"></div>
+            <div class="portfolio-item"><img src="Portfolio (38).JPG" alt="Portfolio 38"></div>
+            <div class="portfolio-item"><img src="Portfolio (39).JPG" alt="Portfolio 39"></div>
+            <div class="portfolio-item"><img src="Portfolio (40).JPG" alt="Portfolio 40"></div>
+            <div class="portfolio-item"><img src="Portfolio (41).JPG" alt="Portfolio 41"></div>
+            <div class="portfolio-item"><img src="Portfolio (42).JPG" alt="Portfolio 42"></div>
+            <div class="portfolio-item"><img src="Portfolio (43).JPG" alt="Portfolio 43"></div>
+            <div class="portfolio-item"><img src="Portfolio (44).JPG" alt="Portfolio 44"></div>
+            <div class="portfolio-item"><img src="Portfolio (45).JPG" alt="Portfolio 45"></div>
+            <div class="portfolio-item"><img src="Portfolio (46).JPG" alt="Portfolio 46"></div>
+            <div class="portfolio-item"><img src="Portfolio (47).JPG" alt="Portfolio 47"></div>
+            <div class="portfolio-item"><img src="Portfolio (48).JPG" alt="Portfolio 48"></div>
+            <div class="portfolio-item"><img src="Portfolio (49).JPG" alt="Portfolio 49"></div>
+            <div class="portfolio-item"><img src="Portfolio (50).JPG" alt="Portfolio 50"></div>
+            <div class="portfolio-item"><img src="Portfolio (51).JPG" alt="Portfolio 51"></div>
+            <div class="portfolio-item"><img src="Portfolio (52).JPG" alt="Portfolio 52"></div>
+            <div class="portfolio-item"><img src="Portfolio (53).JPG" alt="Portfolio 53"></div>
         </div>
     </section>
 
     <section class="section-container" id="shop">
-        <h2>Digitaler Bild-Shop</h2>
-        <div class="section-subtitle">Erwirb hochauflösende digitale Lizenzen meiner Fotografien</div>
-        <div class="gallery-grid">
-            
-            <div class="shop-item"><img src="shop (1).JPG" alt="Bild 1"><div class="item-info"><div class="item-title">Kunstwerk #1</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (2).JPG" alt="Bild 2"><div class="item-info"><div class="item-title">Kunstwerk #2</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (3).JPG" alt="Bild 3"><div class="item-info"><div class="item-title">Kunstwerk #3</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (4).JPG" alt="Bild 4"><div class="item-info"><div class="item-title">Kunstwerk #4</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (5).JPG" alt="Bild 5"><div class="item-info"><div class="item-title">Kunstwerk #5</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (6).JPG" alt="Bild 6"><div class="item-info"><div class="item-title">Kunstwerk #6</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (7).JPG" alt="Bild 7"><div class="item-info"><div class="item-title">Kunstwerk #7</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (8).JPG" alt="Bild 8"><div class="item-info"><div class="item-title">Kunstwerk #8</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (9).JPG" alt="Bild 9"><div class="item-info"><div class="item-title">Kunstwerk #9</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (10).JPG" alt="Bild 10"><div class="item-info"><div class="item-title">Kunstwerk #10</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (11).JPG" alt="Bild 11"><div class="item-info"><div class="item-title">Kunstwerk #11</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (12).JPG" alt="Bild 12"><div class="item-info"><div class="item-title">Kunstwerk #12</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (13).JPG" alt="Bild 13"><div class="item-info"><div class="item-title">Kunstwerk #13</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (14).JPG" alt="Bild 14"><div class="item-info"><div class="item-title">Kunstwerk #14</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (15).JPG" alt="Bild 15"><div class="item-info"><div class="item-title">Kunstwerk #15</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (16).JPG" alt="Bild 16"><div class="item-info"><div class="item-title">Kunstwerk #16</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (17).JPG" alt="Bild 17"><div class="item-info"><div class="item-title">Kunstwerk #17</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (18).JPG" alt="Bild 18"><div class="item-info"><div class="item-title">Kunstwerk #18</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (19).JPG" alt="Bild 19"><div class="item-info"><div class="item-title">Kunstwerk #19</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (20).JPG" alt="Bild 20"><div class="item-info"><div class="item-title">Kunstwerk #20</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (21).JPG" alt="Bild 21"><div class="item-info"><div class="item-title">Kunstwerk #21</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (22).JPG" alt="Bild 22"><div class="item-info"><div class="item-title">Kunstwerk #22</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (23).JPG" alt="Bild 23"><div class="item-info"><div class="item-title">Kunstwerk #23</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (24).JPG" alt="Bild 24"><div class="item-info"><div class="item-title">Kunstwerk #24</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (25).JPG" alt="Bild 25"><div class="item-info"><div class="item-title">Kunstwerk #25</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (26).JPG" alt="Bild 26"><div class="item-info"><div class="item-title">Kunstwerk #26</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (27).JPG" alt="Bild 27"><div class="item-info"><div class="item-title">Kunstwerk #27</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (28).JPG" alt="Bild 28"><div class="item-info"><div class="item-title">Kunstwerk #28</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (29).JPG" alt="Bild 29"><div class="item-info"><div class="item-title">Kunstwerk #29</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (30).JPG" alt="Bild 30"><div class="item-info"><div class="item-title">Kunstwerk #30</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (31).JPG" alt="Bild 31"><div class="item-info"><div class="item-title">Kunstwerk #31</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (32).JPG" alt="Bild 32"><div class="item-info"><div class="item-title">Kunstwerk #32</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (33).JPG" alt="Bild 33"><div class="item-info"><div class="item-title">Kunstwerk #33</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (34).JPG" alt="Bild 34"><div class="item-info"><div class="item-title">Kunstwerk #34</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (35).JPG" alt="Bild 35"><div class="item-info"><div class="item-title">Kunstwerk #35</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (36).JPG" alt="Bild 36"><div class="item-info"><div class="item-title">Kunstwerk #36</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (37).JPG" alt="Bild 37"><div class="item-info"><div class="item-title">Kunstwerk #37</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (38).JPG" alt="Bild 38"><div class="item-info"><div class="item-title">Kunstwerk #38</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (39).JPG" alt="Bild 39"><div class="item-info"><div class="item-title">Kunstwerk #39</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-            <div class="shop-item"><img src="shop (40).JPG" alt="Bild 40"><div class="item-info"><div class="item-title">Kunstwerk #40</div><div class="item-price">Digitale Datei | 29,00 €</div></div><a href="#contact" class="buy-btn">DATEI ANFRAGEN</a></div>
-
+        <h2>Bild-Shop</h2>
+        <div class="section-subtitle">Digitale Lizenzen für deine Projekte</div>
+        <div class="masonry-grid">
+            <div class="shop-item"><img src="shop (1).JPG" alt="Shop 1"><div class="item-info"><div class="item-title">Werk #1</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (2).JPG" alt="Shop 2"><div class="item-info"><div class="item-title">Werk #2</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (3).JPG" alt="Shop 3"><div class="item-info"><div class="item-title">Werk #3</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (4).JPG" alt="Shop 4"><div class="item-info"><div class="item-title">Werk #4</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (5).JPG" alt="Shop 5"><div class="item-info"><div class="item-title">Werk #5</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (6).JPG" alt="Shop 6"><div class="item-info"><div class="item-title">Werk #6</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (7).JPG" alt="Shop 7"><div class="item-info"><div class="item-title">Werk #7</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (8).JPG" alt="Shop 8"><div class="item-info"><div class="item-title">Werk #8</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (9).JPG" alt="Shop 9"><div class="item-info"><div class="item-title">Werk #9</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (10).JPG" alt="Shop 10"><div class="item-info"><div class="item-title">Werk #10</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (11).JPG" alt="Shop 11"><div class="item-info"><div class="item-title">Werk #11</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (12).JPG" alt="Shop 12"><div class="item-info"><div class="item-title">Werk #12</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (13).JPG" alt="Shop 13"><div class="item-info"><div class="item-title">Werk #13</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (14).JPG" alt="Shop 14"><div class="item-info"><div class="item-title">Werk #14</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (15).JPG" alt="Shop 15"><div class="item-info"><div class="item-title">Werk #15</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (16).JPG" alt="Shop 16"><div class="item-info"><div class="item-title">Werk #16</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (17).JPG" alt="Shop 17"><div class="item-info"><div class="item-title">Werk #17</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (18).JPG" alt="Shop 18"><div class="item-info"><div class="item-title">Werk #18</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (19).JPG" alt="Shop 19"><div class="item-info"><div class="item-title">Werk #19</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (20).JPG" alt="Shop 20"><div class="item-info"><div class="item-title">Werk #20</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (21).JPG" alt="Shop 21"><div class="item-info"><div class="item-title">Werk #21</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (22).JPG" alt="Shop 22"><div class="item-info"><div class="item-title">Werk #22</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (23).JPG" alt="Shop 23"><div class="item-info"><div class="item-title">Werk #23</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (24).JPG" alt="Shop 24"><div class="item-info"><div class="item-title">Werk #24</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (25).JPG" alt="Shop 25"><div class="item-info"><div class="item-title">Werk #25</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (26).JPG" alt="Shop 26"><div class="item-info"><div class="item-title">Werk #26</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (27).JPG" alt="Shop 27"><div class="item-info"><div class="item-title">Werk #27</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (28).JPG" alt="Shop 28"><div class="item-info"><div class="item-title">Werk #28</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (29).JPG" alt="Shop 29"><div class="item-info"><div class="item-title">Werk #29</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (30).JPG" alt="Shop 30"><div class="item-info"><div class="item-title">Werk #30</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (31).JPG" alt="Shop 31"><div class="item-info"><div class="item-title">Werk #31</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (32).JPG" alt="Shop 32"><div class="item-info"><div class="item-title">Werk #32</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (33).JPG" alt="Shop 33"><div class="item-info"><div class="item-title">Werk #33</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (34).JPG" alt="Shop 34"><div class="item-info"><div class="item-title">Werk #34</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (35).JPG" alt="Shop 35"><div class="item-info"><div class="item-title">Werk #35</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (36).JPG" alt="Shop 36"><div class="item-info"><div class="item-title">Werk #36</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (37).JPG" alt="Shop 37"><div class="item-info"><div class="item-title">Werk #37</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (38).JPG" alt="Shop 38"><div class="item-info"><div class="item-title">Werk #38</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (39).JPG" alt="Shop 39"><div class="item-info"><div class="item-title">Werk #39</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (40).JPG" alt="Shop 40"><div class="item-info"><div class="item-title">Werk #40</div><div class="item-price">Digital | 29 €</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
         </div>
     </section>
 
     <section class="section-container" id="contact">
-        <h2>Kontakt & Bildanfrage</h2>
-        <div class="section-subtitle">Nutze dieses Formular für Buchungsanfragen oder Bildkäufe</div>
+        <h2>Kontakt</h2>
+        <div class="section-subtitle">Buchungen & Anfragen</div>
         <div class="booking-box">
             <form action="https://formspree.io/f/xbdewrge" method="POST">
                 <div class="form-group">
-                    <label for="name">Dein Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="Vor- und Nachname">
+                    <label>Dein Name</label>
+                    <input type="text" name="name" required>
                 </div>
-                
                 <div class="form-group">
-                    <label for="email">E-Mail-Adresse *</label>
-                    <input type="email" id="email" name="email" required placeholder="name@beispiel.de">
+                    <label>E-Mail</label>
+                    <input type="email" name="email" required>
                 </div>
-
                 <div class="form-group">
-                    <label for="reason">Dein Anliegen *</label>
-                    <select id="reason" name="anliegen">
-                        <option value="kauf-allgemein">Ich möchte ein digitales Bild aus dem Shop erwerben</option>
-                        <option value="shooting-anfrage">Ich habe eine Anfrage für ein Foto-Shooting</option>
-                        <option value="other">Allgemeine Frage / Sonstiges</option>
-                    </select>
+                    <label>Deine Nachricht</label>
+                    <textarea name="message" rows="5" required></textarea>
                 </div>
-
-                <div class="form-group">
-                    <label for="message">Deine Nachricht *</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="Bitte gib hier die Nummer des Bildes an (z. B. Kunstwerk #12), das du kaufen möchtest..."></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn">ANFRAGE ABSENDEN</button>
+                <button type="submit" class="submit-btn">SENDEN</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 NoahNickVisuals. | <a href="#" style="color:#999; text-decoration:none;">Impressum</a></p>
+        <p>&copy; 2026 NoahNickVisuals. | Alle Rechte vorbehalten.</p>
     </footer>
 
 </body>
