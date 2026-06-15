@@ -12,9 +12,10 @@
         nav a { margin-left: 20px; text-decoration: none; color: #666; font-weight: 500; transition: color 0.3s; }
         nav a:hover { color: #000; }
         
-        .hero { height: 60vh; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('Bild Titel.jpg') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; }
+        .hero { height: 60vh; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('Bild Titel.jpg') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; padding: 0 20px; }
         .hero-content h1 { font-size: 48px; margin-bottom: 10px; letter-spacing: 1px; }
-        .hero-content p { font-size: 20px; font-weight: 300; }
+        .hero-content p { font-size: 20px; font-weight: 300; margin-bottom: 15px; }
+        .hero-tags { font-size: 14px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.9; font-weight: 500; }
         
         .section-container { max-width: 1400px; margin: 80px auto; padding: 0 20px; }
         h2 { text-align: center; font-size: 32px; margin-bottom: 15px; letter-spacing: 1px; }
@@ -51,14 +52,14 @@
         .item-info { padding: 15px; border-top: 1px solid #f9f9f9; }
         .item-title { font-size: 16px; font-weight: bold; margin-bottom: 5px; }
         .item-price { color: #222; font-size: 14px; margin-bottom: 15px; }
-        .buy-btn { display: block; text-align: center; background-color: #000; color: #fff; text-decoration: none; padding: 10px; font-size: 13px; font-weight: 500; letter-spacing: 1px; transition: background 0.3s; }
+        .buy-btn { display: block; text-align: center; background-color: #000; color: #fff; text-decoration: none; padding: 10px; font-size: 13px; font-weight: 500; letter-spacing: 1px; transition: background 0.3s; cursor: pointer; }
         .buy-btn:hover { background-color: #333; }
         
         /* Formular */
         .booking-box { max-width: 600px; margin: 0 auto; background: #fff; padding: 40px; border: 1px solid #eee; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 14px; }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; font-family: inherit; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; font-family: inherit; background: #fff; }
         .submit-btn { width: 100%; padding: 14px; background: #000; color: #fff; border: none; font-size: 16px; font-weight: bold; cursor: pointer; }
         
         footer { text-align: center; padding: 40px; background: #fff; border-top: 1px solid #eee; font-size: 14px; color: #999; margin-top: 100px; }
@@ -84,6 +85,7 @@
         <div class="hero-content">
             <h1>Momente für die Ewigkeit</h1>
             <p>Creative Photography & Digital Art</p>
+            <div class="hero-tags">Hochzeiten • Portraits • Produktfotos • & mehr</div>
         </div>
     </section>
 
@@ -146,46 +148,46 @@
         <h2>Bild-Shop</h2>
         <div class="section-subtitle">Digitale Lizenzen für deine Projekte</div>
         <div class="masonry-grid">
-            <div class="shop-item"><img src="shop (1).JPG" alt="Shop 1"><div class="item-info"><div class="item-title">Werk #1</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (2).JPG" alt="Shop 2"><div class="item-info"><div class="item-title">Werk #2</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (3).JPG" alt="Shop 3"><div class="item-info"><div class="item-title">Werk #3</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (4).JPG" alt="Shop 4"><div class="item-info"><div class="item-title">Werk #4</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (5).JPG" alt="Shop 5"><div class="item-info"><div class="item-title">Werk #5</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (6).JPG" alt="Shop 6"><div class="item-info"><div class="item-title">Werk #6</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (7).JPG" alt="Shop 7"><div class="item-info"><div class="item-title">Werk #7</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (8).JPG" alt="Shop 8"><div class="item-info"><div class="item-title">Werk #8</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (9).JPG" alt="Shop 9"><div class="item-info"><div class="item-title">Werk #9</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (10).JPG" alt="Shop 10"><div class="item-info"><div class="item-title">Werk #10</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (11).JPG" alt="Shop 11"><div class="item-info"><div class="item-title">Werk #11</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (12).JPG" alt="Shop 12"><div class="item-info"><div class="item-title">Werk #12</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (13).JPG" alt="Shop 13"><div class="item-info"><div class="item-title">Werk #13</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (14).JPG" alt="Shop 14"><div class="item-info"><div class="item-title">Werk #14</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (15).JPG" alt="Shop 15"><div class="item-info"><div class="item-title">Werk #15</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (16).JPG" alt="Shop 16"><div class="item-info"><div class="item-title">Werk #16</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (17).JPG" alt="Shop 17"><div class="item-info"><div class="item-title">Werk #17</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (18).JPG" alt="Shop 18"><div class="item-info"><div class="item-title">Werk #18</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (19).JPG" alt="Shop 19"><div class="item-info"><div class="item-title">Werk #19</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (20).JPG" alt="Shop 20"><div class="item-info"><div class="item-title">Werk #20</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (21).JPG" alt="Shop 21"><div class="item-info"><div class="item-title">Werk #21</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (22).JPG" alt="Shop 22"><div class="item-info"><div class="item-title">Werk #22</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (23).JPG" alt="Shop 23"><div class="item-info"><div class="item-title">Werk #23</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (24).JPG" alt="Shop 24"><div class="item-info"><div class="item-title">Werk #24</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (25).JPG" alt="Shop 25"><div class="item-info"><div class="item-title">Werk #25</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (26).JPG" alt="Shop 26"><div class="item-info"><div class="item-title">Werk #26</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (27).JPG" alt="Shop 27"><div class="item-info"><div class="item-title">Werk #27</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (28).JPG" alt="Shop 28"><div class="item-info"><div class="item-title">Werk #28</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (29).JPG" alt="Shop 29"><div class="item-info"><div class="item-title">Werk #29</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (30).JPG" alt="Shop 30"><div class="item-info"><div class="item-title">Werk #30</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (31).JPG" alt="Shop 31"><div class="item-info"><div class="item-title">Werk #31</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (32).JPG" alt="Shop 32"><div class="item-info"><div class="item-title">Werk #32</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (33).JPG" alt="Shop 33"><div class="item-info"><div class="item-title">Werk #33</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (34).JPG" alt="Shop 34"><div class="item-info"><div class="item-title">Werk #34</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (35).JPG" alt="Shop 35"><div class="item-info"><div class="item-title">Werk #35</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (36).JPG" alt="Shop 36"><div class="item-info"><div class="item-title">Werk #36</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (37).JPG" alt="Shop 37"><div class="item-info"><div class="item-title">Werk #37</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (38).JPG" alt="Shop 38"><div class="item-info"><div class="item-title">Werk #38</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (39).JPG" alt="Shop 39"><div class="item-info"><div class="item-title">Werk #39</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
-            <div class="shop-item"><img src="shop (40).JPG" alt="Shop 40"><div class="item-info"><div class="item-title">Werk #40</div><div class="item-price">Digital | 29 CHF</div><a href="#contact" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (1).JPG" alt="Shop 1"><div class="item-info"><div class="item-title">Werk #1</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #1', 'shop (1).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (2).JPG" alt="Shop 2"><div class="item-info"><div class="item-title">Werk #2</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #2', 'shop (2).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (3).JPG" alt="Shop 3"><div class="item-info"><div class="item-title">Werk #3</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #3', 'shop (3).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (4).JPG" alt="Shop 4"><div class="item-info"><div class="item-title">Werk #4</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #4', 'shop (4).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (5).JPG" alt="Shop 5"><div class="item-info"><div class="item-title">Werk #5</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #5', 'shop (5).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (6).JPG" alt="Shop 6"><div class="item-info"><div class="item-title">Werk #6</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #6', 'shop (6).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (7).JPG" alt="Shop 7"><div class="item-info"><div class="item-title">Werk #7</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #7', 'shop (7).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (8).JPG" alt="Shop 8"><div class="item-info"><div class="item-title">Werk #8</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #8', 'shop (8).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (9).JPG" alt="Shop 9"><div class="item-info"><div class="item-title">Werk #9</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #9', 'shop (9).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (10).JPG" alt="Shop 10"><div class="item-info"><div class="item-title">Werk #10</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #10', 'shop (10).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (11).JPG" alt="Shop 11"><div class="item-info"><div class="item-title">Werk #11</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #11', 'shop (11).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (12).JPG" alt="Shop 12"><div class="item-info"><div class="item-title">Werk #12</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #12', 'shop (12).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (13).JPG" alt="Shop 13"><div class="item-info"><div class="item-title">Werk #13</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #13', 'shop (13).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (14).JPG" alt="Shop 14"><div class="item-info"><div class="item-title">Werk #14</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #14', 'shop (14).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (15).JPG" alt="Shop 15"><div class="item-info"><div class="item-title">Werk #15</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #15', 'shop (15).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (16).JPG" alt="Shop 16"><div class="item-info"><div class="item-title">Werk #16</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #16', 'shop (16).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (17).JPG" alt="Shop 17"><div class="item-info"><div class="item-title">Werk #17</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #17', 'shop (17).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (18).JPG" alt="Shop 18"><div class="item-info"><div class="item-title">Werk #18</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #18', 'shop (18).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (19).JPG" alt="Shop 19"><div class="item-info"><div class="item-title">Werk #19</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #19', 'shop (19).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (20).JPG" alt="Shop 20"><div class="item-info"><div class="item-title">Werk #20</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #20', 'shop (20).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (21).JPG" alt="Shop 21"><div class="item-info"><div class="item-title">Werk #21</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #21', 'shop (21).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (22).JPG" alt="Shop 22"><div class="item-info"><div class="item-title">Werk #22</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #22', 'shop (22).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (23).JPG" alt="Shop 23"><div class="item-info"><div class="item-title">Werk #23</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #23', 'shop (23).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (24).JPG" alt="Shop 24"><div class="item-info"><div class="item-title">Werk #24</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #24', 'shop (24).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (25).JPG" alt="Shop 25"><div class="item-info"><div class="item-title">Werk #25</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #25', 'shop (25).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (26).JPG" alt="Shop 26"><div class="item-info"><div class="item-title">Werk #26</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #26', 'shop (26).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (27).JPG" alt="Shop 27"><div class="item-info"><div class="item-title">Werk #27</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #27', 'shop (27).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (28).JPG" alt="Shop 28"><div class="item-info"><div class="item-title">Werk #28</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #28', 'shop (28).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (29).JPG" alt="Shop 29"><div class="item-info"><div class="item-title">Werk #29</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #29', 'shop (29).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (30).JPG" alt="Shop 30"><div class="item-info"><div class="item-title">Werk #30</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #30', 'shop (30).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (31).JPG" alt="Shop 31"><div class="item-info"><div class="item-title">Werk #31</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #31', 'shop (31).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (32).JPG" alt="Shop 32"><div class="item-info"><div class="item-title">Werk #32</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #32', 'shop (32).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (33).JPG" alt="Shop 33"><div class="item-info"><div class="item-title">Werk #33</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #33', 'shop (33).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (34).JPG" alt="Shop 34"><div class="item-info"><div class="item-title">Werk #34</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #34', 'shop (34).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (35).JPG" alt="Shop 35"><div class="item-info"><div class="item-title">Werk #35</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #35', 'shop (35).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (36).JPG" alt="Shop 36"><div class="item-info"><div class="item-title">Werk #36</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #36', 'shop (36).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (37).JPG" alt="Shop 37"><div class="item-info"><div class="item-title">Werk #37</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #37', 'shop (37).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (38).JPG" alt="Shop 38"><div class="item-info"><div class="item-title">Werk #38</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #38', 'shop (38).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (39).JPG" alt="Shop 39"><div class="item-info"><div class="item-title">Werk #39</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #39', 'shop (39).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
+            <div class="shop-item"><img src="shop (40).JPG" alt="Shop 40"><div class="item-info"><div class="item-title">Werk #40</div><div class="item-price">Digital | 29 CHF</div><a onclick="anfrageSenden('Werk #40', 'shop (40).JPG')" class="buy-btn">ANFRAGEN</a></div></div>
         </div>
     </section>
 
@@ -203,8 +205,18 @@
                     <input type="email" name="email" required>
                 </div>
                 <div class="form-group">
+                    <label>Anfrage für...</label>
+                    <select name="anfrage_typ" id="anfrage-typ" onchange="typGeaendert()">
+                        <option value="allgemein">Allgemeine Anfrage / Etwas anderes</option>
+                        <option value="hochzeit">Hochzeitsfotografie</option>
+                        <option value="portrait">Portraitshooting</option>
+                        <option value="produkt">Produktfotos</option>
+                        <option value="shop">Bild-Lizenz aus dem Shop</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label>Deine Nachricht</label>
-                    <textarea name="message" rows="5" required></textarea>
+                    <textarea id="message-field" name="message" rows="5" required></textarea>
                 </div>
                 <button type="submit" class="submit-btn">SENDEN</button>
             </form>
@@ -214,6 +226,38 @@
     <footer>
         <p>&copy; 2026 NoahNickVisuals. | Alle Rechte vorbehalten.</p>
     </footer>
+
+    <script>
+        function anfrageSenden(werkName, dateiName) {
+            // Dropdown auf "Bild-Lizenz aus dem Shop" stellen
+            document.getElementById('anfrage-typ').value = 'shop';
+            
+            // Text generieren
+            const text = `Hallo Noah,\n\nich interessiere mich für dein Bild "${werkName}" (${dateiName}) aus deinem Shop und möchte hierzu eine Anfrage senden.\n\nViele Grüße`;
+            
+            // Text in das Textfeld einfügen
+            document.getElementById('message-field').value = text;
+            
+            // Sanft zum Kontaktformular scrollen
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function typGeaendert() {
+            const typ = document.getElementById('anfrage-typ').value;
+            const messageField = document.getElementById('message-field');
+            
+            // Automatische Vorlagen, wenn der Nutzer das Dropdown manuell bedient
+            if (typ === 'hochzeit') {
+                messageField.value = "Hallo Noah,\n\nich würde dich gerne für eine Hochzeitsfotografie anfragen. Bitte teile mir mehr Details zu deinen Paketen mit.\n\nDatum & Location: ";
+            } else if (typ === 'portrait') {
+                messageField.value = "Hallo Noah,\n\nich interessiere mich für ein Portraitshooting bei dir. Wann hättest du freie Termine?";
+            } else if (typ === 'produkt') {
+                messageField.value = "Hallo Noah,\n\nich benötige professionelle Produktfotos für mein Projekt/Unternehmen. Lass uns gerne die Details besprechen.";
+            } else if (typ === 'allgemein') {
+                messageField.value = "";
+            }
+        }
+    </script>
 
 </body>
 </html>
