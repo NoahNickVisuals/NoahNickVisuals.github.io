@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NoahNickVisuals | Portfolio & Buchung</title>
+    <title>NoahNickVisuals | Portfolio & Shop</title>
     <style>
         *, *::before, *::after { box-sizing: border-box; }
         body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: #fcfcfc; color: #333; scroll-behavior: smooth; }
@@ -11,20 +11,30 @@
         .logo { font-size: 24px; font-weight: bold; letter-spacing: 2px; }
         nav a { margin-left: 20px; text-decoration: none; color: #666; font-weight: 500; transition: color 0.3s; }
         nav a:hover { color: #000; }
-        .hero { height: 60vh; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1493863641943-9b68992a8d07?q=80&w=2058') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; }
+        .hero { height: 60vh; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('hero.jpg') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; }
         .hero-content h1 { font-size: 48px; margin-bottom: 10px; letter-spacing: 1px; }
         .hero-content p { font-size: 20px; font-weight: 300; }
         .section-container { max-width: 1200px; margin: 80px auto; padding: 0 20px; }
-        h2 { text-align: center; font-size: 32px; margin-bottom: 40px; letter-spacing: 1px; }
+        h2 { text-align: center; font-size: 32px; margin-bottom: 15px; letter-spacing: 1px; }
+        .section-subtitle { text-align: center; color: #666; font-size: 16px; margin-bottom: 40px; font-style: italic; }
         .gallery-grid { text-align: center; }
-        .gallery-item { display: inline-block; width: 30%; margin: 1.5%; background: #fff; border: 1px solid #eee; padding-bottom: 20px; vertical-align: top; text-align: left; box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: transform 0.3s; }
-        .gallery-item:hover { transform: translateY(-5px); }
-        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        
+        /* Portfolio-Stile (Nur Bilder, clean) */
+        .portfolio-item { display: inline-block; width: 30%; margin: 1.5%; background: #fff; vertical-align: top; box-shadow: 0 2px 4px rgba(0,0,0,0.02); overflow: hidden; }
+        .portfolio-item img { width: 100%; height: 300px; object-fit: cover; display: block; transition: transform 0.5s; }
+        .portfolio-item:hover img { transform: scale(1.03); }
+        
+        /* Shop-Stile (Mit Preisen und Buttons) */
+        .shop-item { display: inline-block; width: 30%; margin: 1.5%; background: #fff; border: 1px solid #eee; padding-bottom: 20px; vertical-align: top; text-align: left; box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: transform 0.3s; }
+        .shop-item:hover { transform: translateY(-5px); }
+        .shop-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
         .item-info { padding: 15px 15px 0 15px; }
         .item-title { font-size: 18px; font-weight: bold; margin-bottom: 5px; }
-        .item-price { color: #666; font-size: 16px; margin-bottom: 15px; }
+        .item-price { color: #222; font-size: 16px; font-weight: 500; margin-bottom: 15px; }
         .buy-btn { display: block; text-align: center; background-color: #000; color: #fff; text-decoration: none; padding: 10px; font-size: 14px; font-weight: 500; letter-spacing: 1px; transition: background 0.3s; margin: 0 15px; }
         .buy-btn:hover { background-color: #333; }
+        
+        /* Formular-Stile */
         .booking-box { max-width: 600px; margin: 0 auto; background: #fff; padding: 40px; border: 1px solid #eee; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 14px; }
@@ -32,9 +42,10 @@
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #000; outline: none; }
         .submit-btn { width: 100%; padding: 14px; background: #000; color: #fff; border: none; font-size: 16px; font-weight: bold; letter-spacing: 1px; cursor: pointer; transition: background 0.3s; }
         .submit-btn:hover { background: #333; }
+        
         footer { text-align: center; padding: 40px; background: #fff; border-top: 1px solid #eee; font-size: 14px; color: #999; margin-top: 100px; }
-        @media (max-width: 768px) { .gallery-item { width: 45%; margin: 2.5%; } .booking-box { padding: 20px; } }
-        @media (max-width: 480px) { .gallery-item { width: 95%; margin: 10px auto; display: block; } }
+        @media (max-width: 768px) { .portfolio-item, .shop-item { width: 45%; margin: 2.5%; } }
+        @media (max-width: 480px) { .portfolio-item, .shop-item { width: 95%; margin: 10px auto; display: block; } }
     </style>
 </head>
 <body>
@@ -43,59 +54,86 @@
         <div class="logo">NoahNickVisuals</div>
         <nav>
             <a href="#">Home</a>
-            <a href="#portfolio">Portfolio & Shop</a>
-            <a href="#contact">Anfrage & Buchung</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#shop">Datei-Shop</a>
+            <a href="#contact">Kontakt</a>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-content">
             <h1>Momente für die Ewigkeit</h1>
-            <p>Entdecke meine Arbeiten, kaufe digitale Dateien oder buche ein Shooting</p>
+            <p>Creative Photography & Digital Art</p>
         </div>
     </section>
 
-    <!-- GALERIE & SHOP -->
+    <!-- BEREICH 1: REINES PORTFOLIO -->
     <section class="section-container" id="portfolio">
-        <h2>Mein Portfolio & Datei-Verkauf</h2>
+        <h2>Mein Portfolio</h2>
+        <div class="section-subtitle">Ein Einblick in meine besten Arbeiten und Projekte</div>
         <div class="gallery-grid">
             
-            <!-- Bild 1 -->
-            <div class="gallery-item">
+            <!-- Portfolio Bild 1 -->
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?q=80&w=600" alt="Portfolio Werk 1">
+            </div>
+
+            <!-- Portfolio Bild 2 -->
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1500622557534-20d135449857?q=80&w=600" alt="Portfolio Werk 2">
+            </div>
+
+            <!-- Portfolio Bild 3 -->
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=600" alt="Portfolio Werk 3">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BEREICH 2: DATEI-SHOP -->
+    <section class="section-container" id="shop">
+        <h2>Digitaler Bild-Shop</h2>
+        <div class="section-subtitle">Erwirb hochauflösende digitale Lizenzen meiner Fotografien</div>
+        <div class="gallery-grid">
+            
+            <!-- Shop Bild 1 -->
+            <div class="shop-item">
                 <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=600" alt="Berglandschaft">
                 <div class="item-info">
                     <div class="item-title">Bergakzente</div>
-                    <div class="item-price">Digitale Datei (Lizenz) | 29,00 €</div>
+                    <div class="item-price">Digitale Datei | 29,00 €</div>
                 </div>
-                <a href="#contact" class="buy-btn">BILD ANFRAGEN</a>
+                <a href="#contact" class="buy-btn">DATEI ANFRAGEN</a>
             </div>
 
-            <!-- Bild 2 -->
-            <div class="gallery-item">
+            <!-- Shop Bild 2 -->
+            <div class="shop-item">
                 <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=600" alt="Wald">
                 <div class="item-info">
                     <div class="item-title">Morgenerwachen</div>
-                    <div class="item-price">Digitale Datei (Lizenz) | 29,00 €</div>
+                    <div class="item-price">Digitale Datei | 29,00 €</div>
                 </div>
-                <a href="#contact" class="buy-btn">BILD ANFRAGEN</a>
+                <a href="#contact" class="buy-btn">DATEI ANFRAGEN</a>
             </div>
 
-            <!-- Bild 3 -->
-            <div class="gallery-item">
+            <!-- Shop Bild 3 -->
+            <div class="shop-item">
                 <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=600" alt="Sonnenuntergang">
                 <div class="item-info">
                     <div class="item-title">Goldene Stunde</div>
-                    <div class="item-price">Digitale Datei (Lizenz) | 29,00 €</div>
+                    <div class="item-price">Digitale Datei | 29,00 €</div>
                 </div>
-                <a href="#contact" class="buy-btn">BILD ANFRAGEN</a>
+                <a href="#contact" class="buy-btn">DATEI ANFRAGEN</a>
             </div>
 
         </div>
     </section>
 
-    <!-- KONTAKTFORMULAR (MIT DEINER FORMUPREE ID) -->
+    <!-- KONTAKTFORMULAR -->
     <section class="section-container" id="contact">
-        <h2>Kontakt, Bildanfrage & Buchung</h2>
+        <h2>Kontakt & Bildanfrage</h2>
+        <div class="section-subtitle">Nutze dieses Formular für Buchungsanfragen oder Bildkäufe</div>
         <div class="booking-box">
             <form action="https://formspree.io/f/xbdewrge" method="POST">
                 <div class="form-group">
@@ -114,15 +152,14 @@
                         <option value="kauf-bergakzente">Ich möchte die Datei 'Bergakzente' kaufen (29€)</option>
                         <option value="kauf-morgenerwachen">Ich möchte die Datei 'Morgenerwachen' kaufen (29€)</option>
                         <option value="kauf-goldene-stunde">Ich möchte die Datei 'Goldene Stunde' kaufen (29€)</option>
-                        <option value="shooting-portrait">Ich möchte ein Porträt-Shooting buchen</option>
-                        <option value="shooting-wedding">Ich möchte ein Hochzeits-Shooting buchen</option>
-                        <option value="other">Sonstiges / Allgemeine Frage</option>
+                        <option value="shooting-anfrage">Ich habe eine Anfrage für ein Foto-Shooting</option>
+                        <option value="other">Allgemeine Frage / Sonstiges</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="message">Deine Nachricht *</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="Schreib mir hier deine Wünsche oder Details zum Shooting..."></textarea>
+                    <textarea id="message" name="message" rows="5" required placeholder="Schreib mir hier deine Nachricht..."></textarea>
                 </div>
 
                 <button type="submit" class="submit-btn">ANFRAGE ABSENDEN</button>
