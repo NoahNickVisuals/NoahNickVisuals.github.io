@@ -1,17 +1,12 @@
-Na klar, hier ist der komplette Code für deine index.html noch einmal.
-
-Kopiere einfach den gesamten Block und füge ihn in das große Textfeld auf GitHub ein, nachdem du den Namen index.html oben eingetippt hast:
-
-HTML
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NoahNickVisuals | Portfolio, Shop & Buchung</title>
+    <title>NoahNickVisuals | Portfolio & Buchung</title>
     <style>
         *, *::before, *::after { box-sizing: border-box; }
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: #fcfcfc; color: #333; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: #fcfcfc; color: #333; scroll-behavior: smooth; }
         header { display: flex; justify-content: space-between; align-items: center; padding: 30px 10%; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
         .logo { font-size: 24px; font-weight: bold; letter-spacing: 2px; }
         nav a { margin-left: 20px; text-decoration: none; color: #666; font-weight: 500; transition: color 0.3s; }
@@ -49,71 +44,82 @@ HTML
         <nav>
             <a href="#">Home</a>
             <a href="#portfolio">Portfolio & Shop</a>
-            <a href="#booking">Buchungsanfrage</a>
+            <a href="#contact">Anfrage & Buchung</a>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-content">
             <h1>Momente für die Ewigkeit</h1>
-            <p>Entdecke meine Arbeiten und buche dein individuelles Shooting</p>
+            <p>Entdecke meine Arbeiten, kaufe digitale Dateien oder buche ein Shooting</p>
         </div>
     </section>
 
     <section class="section-container" id="portfolio">
-        <h2>Mein Portfolio & Print-Shop</h2>
+        <h2>Mein Portfolio & Datei-Verkauf</h2>
         <div class="gallery-grid">
+            
             <div class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=600" alt="Berglandschaft">
                 <div class="item-info">
                     <div class="item-title">Bergakzente</div>
-                    <div class="item-price">Feines Kunstdruck-Poster ab 49,00 €</div>
+                    <div class="item-price">Digitale Datei (Lizenz) | 29,00 €</div>
                 </div>
-                <a href="#" target="_blank" class="buy-btn">JETZT KAUFEN</a>
+                <a href="#contact" class="buy-btn">BILD ANFRAGEN</a>
             </div>
+
             <div class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=600" alt="Wald">
                 <div class="item-info">
                     <div class="item-title">Morgenerwachen</div>
-                    <div class="item-price">Feines Kunstdruck-Poster ab 49,00 €</div>
+                    <div class="item-price">Digitale Datei (Lizenz) | 29,00 €</div>
                 </div>
-                <a href="#" target="_blank" class="buy-btn">JETZT KAUFEN</a>
+                <a href="#contact" class="buy-btn">BILD ANFRAGEN</a>
             </div>
+
             <div class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=600" alt="Sonnenuntergang">
                 <div class="item-info">
                     <div class="item-title">Goldene Stunde</div>
-                    <div class="item-price">Feines Kunstdruck-Poster ab 59,00 €</div>
+                    <div class="item-price">Digitale Datei (Lizenz) | 29,00 €</div>
                 </div>
-                <a href="#" target="_blank" class="buy-btn">JETZT KAUFEN</a>
+                <a href="#contact" class="buy-btn">BILD ANFRAGEN</a>
             </div>
+
         </div>
     </section>
 
-    <section class="section-container" id="booking">
-        <h2>Shooting buchen</h2>
+    <section class="section-container" id="contact">
+        <h2>Kontakt, Bildanfrage & Buchung</h2>
         <div class="booking-box">
             <form action="https://formspree.io/f/DEINE_ID_HIER" method="POST">
                 <div class="form-group">
                     <label for="name">Dein Name *</label>
                     <input type="text" id="name" name="name" required placeholder="Vor- und Nachname">
                 </div>
+                
                 <div class="form-group">
                     <label for="email">E-Mail-Adresse *</label>
                     <input type="email" id="email" name="email" required placeholder="name@beispiel.de">
                 </div>
+
                 <div class="form-group">
-                    <label for="type">Art des Shootings</label>
-                    <select id="type" name="shooting-type">
-                        <option value="portrait">Porträt-Shooting</option>
-                        <option value="wedding">Hochzeitsfotografie</option>
-                        <option value="event">Event / Reportage</option>
+                    <label for="reason">Dein Anliegen *</label>
+                    <select id="reason" name="anliegen">
+                        <option value="kauf-bergakzente">Ich möchte die Datei 'Bergakzente' kaufen (29€)</option>
+                        <option value="kauf-morgenerwachen">Ich möchte die Datei 'Morgenerwachen' kaufen (29€)</option>
+                        <option value="kauf-goldene-stunde">Ich möchte die Datei 'Goldene Stunde' kaufen (29€)</option>
+                        <option value="shooting-portrait">Ich möchte ein Porträt-Shooting buchen</option>
+                        <option value="shooting-wedding">Ich möchte ein Hochzeits-Shooting buchen</option>
+                        <option value="other">Sonstiges / Allgemeine Frage</option>
                     </select>
                 </div>
+
                 <div class="form-group">
                     <label for="message">Deine Nachricht *</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="Erzähl mir ein wenig über deine Vorstellungen..."></textarea>
+                    <textarea id="message" name="message" rows="5" required placeholder="Schreib mir hier deine Wünsche oder Details zum Shooting..."></textarea>
                 </div>
+
                 <button type="submit" class="submit-btn">ANFRAGE ABSENDEN</button>
             </form>
         </div>
